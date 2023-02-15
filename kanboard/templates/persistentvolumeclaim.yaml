@@ -1,0 +1,17 @@
+{{- if .Values.persistentVolume.enabled -}}
+{{- if not .Values.persistentVolume.existingClaim -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "kanboard.fullname" . }}
+  labels:
+  {{- include "kanboard.labels" . | nindent 4 }}
+spec:
+  accessModes:
+  - ReadWriteOnce
+  {{ if .Values.persistentVolume.storageClass }}storageClassName: "{{ .Values.persistentVolume.storageClass }}"{{ end }}
+  resources:
+    requests:
+      storage: "{{ .Values.persistentVolume.size }}"
+{{- end -}}
+{{- end -}}

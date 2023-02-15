@@ -1,0 +1,13 @@
+apiVersion: v2
+description: Unofficial helm chart for Kanboard
+home: https://github.com/11mariom/kanboard-helm-charts
+maintainers:
+  - name: Mariusz <mariom> Kozakowski
+    url: https://github.com/11mariom/
+name: kanboard
+type: application
+version: 0.1.0
+appVersion: "v1.2.26"
+sources:
+  - https://github.com/kanboard/kanboard
+icon: https://kanboard.org/assets/img/favicon.png
